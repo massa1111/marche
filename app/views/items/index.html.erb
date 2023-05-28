@@ -1,0 +1,60 @@
+<%# <head>
+  <title>オンラインマルシェ</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head> %>
+<body>
+  <header>
+  <nav>
+    <ul>
+      <li class="left-button"><a href="#" class="nav-link">オンラインマルシェ</a></li>
+      <li class="left-button"><a href="#" class="action-button">商品一覧</a></li>
+       <li class="left-button"><a href="#" class="action-button">商品出品</a></li>
+      <li class="right-button"><a href="#" class="action-button">新規登録</a></li>
+      <li class="right-button"><a href="#" class="action-button">ログイン</a></li>
+    </ul>
+  </nav>
+</header>
+
+	
+  <main>
+  <section class="hero">
+  <%= image_tag "top.jpg", class: "hero-image" %>
+  <div class="hero-overlay">
+    <h1>オンラインマルシェ</h1>
+    <p>手作り野菜を気軽に購入！簡単出品！</p>
+    <a href="#" class="button">購入する</a>
+     <a href="#" class="button">出品する</a>
+  </div>
+<section class="featured">
+  <h2>誰でも気軽に出品、購入！</h2>
+  <ul>
+    <li>
+      <a href="#">
+        <%= image_tag "takuhai.png", class: "top-image" %>
+        <h3>誰でも簡単出品出来ます</h3>
+        <p>簡単登録、面倒な手続き不要！！</p>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+       <%= image_tag "nouka.png", class: "top-image" %>
+        <h3>生産者さん、生産地記載で安心</h3>
+        <p>生産者さんを身近に。</p> 
+      </a>
+    </li>
+    <li>
+      <a href="#">
+       <%= image_tag "com.jfif", class: "top-image" %>
+        <h3>気軽にコミュニケーション</h3>
+        <p>コメント機能で質問や感謝を伝えましょう。</p>
+      </a>
+    </li>
+  </ul>
+</section>
+
+  </main>
+  <footer>
+    <p>© 2023 オンラインマルシェ</p>
+  </footer>
+</body>

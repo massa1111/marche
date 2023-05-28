@@ -1,0 +1,225 @@
+/* リセットCSS */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
+  color: #3b4043;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: #3b4043;
+}
+
+header {
+  background-color: #fcfcfc;
+  padding: 20px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* nav ul li {
+  flex: 1;
+  text-align: center;
+}
+
+nav ul li:first-child {
+  text-align: left;
+}
+
+nav ul li:last-child {
+  text-align: right;
+} */
+
+.action-button {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 1.6vw;
+  text-decoration: none;
+  text-align: center;
+  -webkit-text-stroke: 0.03vw #333;
+  text-stroke: 1px #333;
+  color: #fff;
+  background-color: #189e2a;
+  border: none;
+  border-radius: 4px;
+}
+
+.action-button:hover {
+  background-color: rgb(194, 207, 51);
+}
+
+.nav-link,
+nav .left-button a.button {
+  -webkit-text-stroke: 0.03vw #333;
+  text-stroke: 1px #333;
+ color: #189e2a;
+  padding: 10px 2vw;
+  font-size: 2.4vw;
+  
+}
+
+nav .right-button a.button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.3em;
+}
+
+
+/* ヒーローセクションのスタイル */
+.hero {
+  position: relative;
+  text-align: center;
+}
+
+.hero-image {
+  width: 100vw;
+  height: 100%;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero-overlay h1 {
+  font-size: 5vw; /* 2倍の大きさ */
+  margin-bottom: 20px;
+  color: #189e2a;
+  -webkit-text-stroke: 0.01vw #333;
+  text-stroke: 1px #333;
+ 
+  
+} 
+
+.hero-overlay p {
+  font-size: 1.7vw;
+  margin-bottom: 30px;
+  color: #fff;
+  
+}
+
+.hero-overlay a.button {
+  font-size: 4vw;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 6px soli #189e2a;/* 縁取りの色と幅を指定 */
+}
+
+.hero-overlay a.button:hover {
+  background-color:  #189e2a;
+}
+.hero-overlay {
+  top: 25%; 
+}
+
+
+/* 注目の商品セクションのスタイル */
+.top-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 200px;
+}
+
+.featured {
+  padding: 40px;
+  background-color: #f9f9f9;
+}
+
+.featured h2 {
+  font-size: 3vw;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.featured ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.featured li {
+  display: inline-block;
+  width: calc(33.33% - 40px);
+  margin: 20px;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+.featured li img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.featured li h3 {
+  font-size: 2vw;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.featured li p {
+  font-size: 1.3vw;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #555;
+}
+
+
+/* フッターのスタイル */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 1.3vw;
+  margin: 
+  0;
+}
