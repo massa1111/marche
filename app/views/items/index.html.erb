@@ -9,7 +9,7 @@
     <ul>
      <li class="left-button"><a href="#" class="nav-link">オンラインマルシェ</a></li>
     <% if user_signed_in? %>
-      <li><%= link_to current_user.name, "#", class: "action-button" %></li>
+      <li>ようこそ<%= link_to current_user.name, "#", class: "nav-link" %>さま</li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "action-button" %></li>
      <% else %>
       <li><%= link_to 'ログイン', new_user_session_path, class: "action-button" %></li>
