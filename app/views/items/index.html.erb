@@ -7,11 +7,19 @@
   <header>
   <nav>
     <ul>
-      <li class="left-button"><a href="#" class="nav-link">オンラインマルシェ</a></li>
-      <li class="left-button"><a href="#" class="action-button">商品一覧</a></li>
+     <li class="left-button"><a href="#" class="nav-link">オンラインマルシェ</a></li>
+    <% if user_signed_in? %>
+      <li>ようこそ<%= link_to current_user.name, "#", class: "nav-link" %>さま</li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "action-button" %></li>
+     <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "action-button" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "action-button" %></li>
+     <% end %>
+     
+       <li class="left-button"><a href="#" class="action-button">商品一覧</a></li>
        <li class="left-button"><a href="#" class="action-button">商品出品</a></li>
-      <li class="right-button"><a href="#" class="action-button">新規登録</a></li>
-      <li class="right-button"><a href="#" class="action-button">ログイン</a></li>
+      <%# <li class="right-button"><a href="#" class="action-button">新規登録</a></li>
+      <li class="right-button"><a href="#" class="action-button">ログイン</a></li> %>
     </ul>
   </nav>
 </header>
