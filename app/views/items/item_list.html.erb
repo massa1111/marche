@@ -2,7 +2,7 @@
   <li>
     <h2><%= item.item_name %></h2>
     
-     <%= image_tag @item.image ,class: "item-box-img" %>
+    <%= image_tag item.image, class: "item-img" %>  
     <p><%= item.info %></p>
     <p>価格: ¥<%= item.price %></p>
     <th class="detail-item">発送元の地域</th>
