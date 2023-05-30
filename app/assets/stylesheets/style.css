@@ -394,6 +394,12 @@ nav .right-button a.button {
   margin-top: 10px;
 }
 
+.detail-value1 {
+  font-size: 16px;
+  color: #333;
+  margin-top: 5px;
+}
+
 .item-details {
   margin-top: 10px;
 }
@@ -403,7 +409,7 @@ nav .right-button a.button {
   color: #888;
 }
 
-.detail-value {
+.detail-value1 {
   font-size: 16px;
   color: #333;
   margin-top: 5px;

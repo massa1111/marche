@@ -26,10 +26,14 @@
       
         <p class="item-info">説明：<%= item.info %></p>
         <%# <div class="item-details"> %>
-          <div class="detail-value">発送元の地域:<%= Prefecture.find_by(id: item.prefecture_id)&.prefecture %></div>
+          <div class="detail-value1">発送元の地域:<%= Prefecture.find_by(id: item.prefecture_id)&.prefecture %></div>
         <%# </div> %>
-        <p class="item-price">価格: <%= item.price %>円</p>
-        
+     
+         <tr>
+          <th class="detail-item">配送料の負担:</th>
+          <td class="detail-value"><%= ShippingFeeStatus.find_by(id: item.shipping_fee_status_id)&.shipping_fee_status %></td>
+        </tr>
+           <p class="item-price">価格: <%= item.price %>円</p>
       </div>
     <% end %>
   </li>
