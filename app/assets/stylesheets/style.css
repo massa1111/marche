@@ -551,6 +551,177 @@ nav .right-button a.button {
 }
 
 
+/* 商品詳細ページ全体のスタイル */
+.item-show {
+  margin-bottom: 20px;
+}
+
+/* 商品ボックスのスタイル */
+.item-box {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 商品名のスタイル */
+.name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* 商品画像のスタイル */
+.item-img-content {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.item-box-img2 {
+  width: 50vw;
+  height: auto;
+}
+
+/* 売り切れメッセージのスタイル */
+.sold-out {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+/* 価格と送料のスタイル */
+.item-price-box {
+  margin-bottom: 10px;
+}
+
+.item-price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.item-postage {
+  font-size: 16px;
+  color: #666;
+}
+
+/* 編集・削除リンクのスタイル */
+.item-red-btn {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 8px 16px;
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.or-text {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+.item-destroy {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #ccc;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* 商品説明のスタイル */
+.item-explain-box {
+  margin-bottom: 10px;
+}
+
+/* 商品詳細テーブルのスタイル */
+.detail-table {
+  width: 100%;
+  margin-bottom: 10px;
+  border-collapse: collapse;
+}
+
+.detail-item,
+.detail-value {
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.detail-item {
+  font-weight: bold;
+  background-color: #f2f2f2;
+}
+
+/* オプションボタンのスタイル */
+.option {
+  margin-bottom: 10px;
+}
+
+.favorite-btn,
+.report-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #ccc;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+/* コメントボックスのスタイル */
+.comment-box {
+  margin-bottom: 10px;
+}
+
+.comment-text {
+  width: 100%;
+  height: 100px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.comment-warn {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.comment-btn {
+  padding: 8px 16px;
+  background-color: #f92c0d;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* ページ内リンクのスタイル */
+.links {
+  margin-bottom: 10px;
+}
+
+.change-item-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #ccc;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.another-item {
+  font-size: 14px;
+  color: #666;
+}
+
+
+
+
 /* フッターのスタイル */
 footer {
   background-color: #333;
