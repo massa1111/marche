@@ -1,10 +1,10 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:update, :edit, :show, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:tem_list,:index, :show]
   before_action :contributor_confirmation, only: [:edit, :update, :destroy]
-  def index
-      @items = Item.includes(:user).order('created_at DESC')
-      render 'items/item_list' # 追加したビューファイルを指定
+  def item_list
+    @items = Item.includes(:user).order('created_at DESC')
+    render 'items/item_list'
   end
 
   def new

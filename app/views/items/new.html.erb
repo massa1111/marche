@@ -1,8 +1,26 @@
+<header>
+  <nav>
+    <ul>
+     <%= link_to "オンラインマルシェ", root_path, class: "nav-link" %></li>
+    <% if user_signed_in? %>
+      <li>ようこそ<%= link_to current_user.name, "#", class: "nav-link" %>さま<li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "action-button" %></li>
+     <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "action-button" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "action-button" %></li>
+     <% end %>
+    
+    </ul>              
+  </nav>
+</header>
+
+
 <div class="items-sell-contents">
   <header class="items-sell-header">
-    <%# <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %> %>
+   
 
   </header>
+  
   <div class="items-sell-main">
     <h2 class="items-sell-title">商品の情報を入力</h2>
     <%= form_with model: @item, local: true do |f| %>
@@ -36,7 +54,7 @@
           商品の説明
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :info, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :info, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、、重さ、定価、注意点など）" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
     <%# /商品名と商品説明 %>
@@ -62,8 +80,8 @@
     <%# 配送について %>
     <div class="items-detail">
       <div class="weight-bold-text question-text">
-        <span>配送について</span>
-        <a class="question" href="#">?</a>
+       
+        <a class="question" href="#"></a>
       </div>
       <div class="form">
         <div class="weight-bold-text">
@@ -88,8 +106,8 @@
     <%# 販売価格 %>
     <div class="sell-price">
       <div class="weight-bold-text question-text">
-        <span>販売価格<br>(¥300〜9,999,999)</span>
-        <a class="question" href="#">?</a>
+      
+        <a class="question" href="#"></a>
       </div>
       <div>
         <div class="price-content">
@@ -100,40 +118,24 @@
           <span class="sell-yen">¥</span>
           <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）300" %>
         </div>
-        <div class="price-content">
-          <span>販売手数料 (10%)</span>
-          <span>
-            <span id='add-tax-price'></span>円
-          </span>
-        </div>
-        <div class="price-content">
-          <span>販売利益</span>
-          <span>
-            <span id='profit'></span>円
-          </span>
-        </div>
+       
       </div>
     </div>
     <%# /販売価格 %>
 
     <%# 注意書き %>
-    <div class="caution">
+    <%# <div class="caution">
       <p class="sentence">
         <a href="#">禁止されている出品、</a>
         <a href="#">行為</a>
         を必ずご確認ください。
       </p>
       <p class="sentence">
-        またブランド品でシリアルナンバー等がある場合はご記載ください。
-        <a href="#">偽ブランドの販売</a>
-        は犯罪であり処罰される可能性があります。
-      </p>
-      <p class="sentence">
         また、出品をもちまして
         <a href="#">加盟店規約</a>
         に同意したことになります。
       </p>
-    </div>
+    </div> %>
     <%# /注意書き %>
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
@@ -151,8 +153,5 @@
       <li><a href="#">特定商取引に関する表記</a></li>
     </ul>
     <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
-    <p class="inc">
-      ©︎Furima,Inc.
-    </p>
-  </footer>
-</div> %>
+    
+</div> 

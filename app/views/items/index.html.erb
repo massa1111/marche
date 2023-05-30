@@ -7,7 +7,8 @@
   <header>
   <nav>
     <ul>
-     <li class="left-button"><a href="#" class="nav-link">オンラインマルシェ</a></li>
+    <li class="left-button">
+  <%= link_to "オンラインマルシェ", root_path, class: "nav-link" %></li>
     <% if user_signed_in? %>
       <li>ようこそ<%= link_to current_user.name, "#", class: "nav-link" %>さま<li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "action-button" %></li>
@@ -16,12 +17,7 @@
       <li><%= link_to '新規登録', new_user_registration_path, class: "action-button" %></li>
      <% end %>
      <li><%= link_to '商品出品', new_item_path, class: "action-button" %></li>
-     <%# <li><%= link_to '商品一覧', item_path, class: "action-button" %></li> 
-        <%# <li><%= link_to(new_item_path, class: 'action-button') do %>商品出品<li> %>
-       <li class="left-button"><a href="#" class="action-button">商品一覧</a></li>
-       <li class="left-button"><a href="#" class="action-button">商品出品</a></li>
-      <%# <li class="right-button"><a href="#" class="action-button">新規登録</a></li>
-      <li class="right-button"><a href="#" class="action-button">ログイン</a></li> %>
+     <li><%= link_to '商品一覧', items_item_list_path, class: "action-button" %></li>  
     </ul>              
   </nav>
 </header>
@@ -33,8 +29,10 @@
   <div class="hero-overlay">
     <%# <h1>オンラインマルシェ</h1> %>
     <p>手作り野菜を気軽に購入！簡単出品！</p>
-    <a href="#" class="button">購入する</a>
-     <a href="#" class="button">出品する</a>
+     <%= link_to '商品出品', new_item_path, class: "button" %>
+     <%= link_to '商品一覧', items_item_list_path, class: "button" %>
+    <%# <a href="#" class="button">購入する</a>
+     <a href="#" class="button">出品する</a> %>
   </div>
 <section class="featured">
   <h2>誰でも気軽に出品、購入！</h2>
