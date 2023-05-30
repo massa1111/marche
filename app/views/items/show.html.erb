@@ -3,7 +3,7 @@
     <ul>
       <%= link_to "オンラインマルシェ", root_path, class: "nav-link" %></li>
     <% if user_signed_in? %>
-      <li>ようこそ<%= link_to current_user.name, "#", class: "nav-link" %>さま<li>
+      <li>ようこそ<%= link_to current_user.name, "#", class: "nav-link" %>さま</li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "action-button" %></li>
      <% else %>
       <li><%= link_to 'ログイン', new_user_session_path, class: "action-button" %></li>
@@ -25,11 +25,11 @@
     </h2>
     <div class="item-img-content">
       <%= image_tag @item.image ,class: "item-box-img2" %>
-      <%# <% if Order.exists?(item_id: @item.id) %> %>
+      <% if Order.exists?(item_id: @item.id) %> 
        <div class="sold-out">
         <span>Sold Out!!</span>
       </div>
-      <%# <% end %> %>
+       <% end %> 
     </div>
     <div class="item-price-box">
       <span class="item-price">
@@ -42,22 +42,22 @@
 
     
   <% if user_signed_in? %>
-    <%# <% if user_signed_in? && current_user.id == @item.user_id %> 
-   <%# <% if user_signed_in? && current_user.id == @item.user_id && !Order.exists?(item_id: @item.id) %>  %>
+     <% if user_signed_in? && current_user.id == @item.user_id %> 
+   <%# <% if user_signed_in? && current_user.id == @item.user_id && !Order.exists?(item_id: @item.id) %>  
     <%= link_to "商品の編集", edit_item_path, method: :get, class: "item-red-btn" %>
-    <p class="or-text">or</p>
+    <p class="or-text"></p>
     <%= link_to "削除", item_path, method: :delete, class:"item-destroy" %>
     
-    <%# <% else %>
-       <%# <% if Order.exists?(item_id: @item.id) %>  %>
+    <% else %>
+       <% if Order.exists?(item_id: @item.id) %>  
             <%#  購入画面リンク非表示  %>
-       <%# <% else %> %>
+        <% else %> 
       <%= link_to "購入画面に進む", item_orders_path(item_id: @item.id) ,class:"item-red-btn"%>
-       <%# <% end %> %>
-   <%# <% end %> %>
+        <% end %> 
+   <% end %> 
  <% end %> 
     <div class="item-explain-box">
-      <span><%= @item.info %></span>
+      <span>説明:<%= @item.info %></span>
     </div>
     <table class="detail-table">
       <tbody>
@@ -80,7 +80,7 @@
         </tr>
         <tr>
           <th class="detail-item">発送元の地域</th>
-          <td class="detail-value"><%= Prefecture.find_by(id: @item.prefecture_id)&.prefecture %></td>
+          <td class="detail-value2"><%= Prefecture.find_by(id: @item.prefecture_id)&.prefecture %></td>
         </tr>
         <tr>
           <th class="detail-item">発送日の目安</th>
@@ -110,7 +110,7 @@
      
       <button type="submit" class="comment-btn">
  
-        <span>コメントする<span>
+        <span>コメントする</span>
       </button>
     </form>
   </div>
@@ -123,7 +123,7 @@
     </a>
   </div>
   
-  <%# <a href="#" class="another-item"><%= Category.find_by(id: @item.category_id).category %>をもっと見る</a> %>
+  <%# <a href="#" class="another-item"><%= Category.find_by(id: @item.category_id).category %>をもっと見る</a> 
   
 </div>
 

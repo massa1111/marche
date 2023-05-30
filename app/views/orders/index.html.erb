@@ -39,7 +39,7 @@
     <%# 支払額の表示 %>
     <div class='item-payment'>
       <h1 class='item-payment-title'>
-        支払金額
+        お支払金額
       </h1>
       <p class='item-payment-price'>
           ¥<%= @item.price %>  
@@ -143,6 +143,7 @@
     <%# /配送先の入力 %>
     <div class='buy-btn'>
       <%= f.submit "購入" ,class:"buy-red-btn", id:"button" %>
+       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <% end %>
   </div>
