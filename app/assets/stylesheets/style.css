@@ -737,6 +737,19 @@ nav .right-button a.button {
   border-radius: 4px;
 }
 
+.comment{
+  display: flex;
+  padding: 1px 40px;
+}
+
+.comment p{
+   margin: 0;
+}
+
+.user-info{
+  color: gray;
+  font-weight: bold;
+}
 /* ページ内リンクのスタイル */
 .links {
   margin-bottom: 10px;
