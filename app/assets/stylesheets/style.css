@@ -581,7 +581,7 @@ nav .right-button a.button {
 /* 商品ボックスのスタイル */
 .item-box {
   background-color: #f2f2f2;
-  padding: 20px;
+  padding: 40px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -589,30 +589,44 @@ nav .right-button a.button {
 /* 商品名のスタイル */
 .name {
   font-size: 24px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  padding: 30px;
 }
 
 /* 商品画像のスタイル */
-.item-img-content {
+.item-img-content2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   margin-bottom: 10px;
 }
-
 .item-box-img2 {
-  width: 50vw;
+  width: 60vw;
   height: auto;
 }
+
 
 /* 売り切れメッセージのスタイル */
 .sold-out {
   position: absolute;
   top: 10px;
-  right: 10px;
+  left: 10px;
+  background-color: red;
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.sold-out2 {
   background-color: red;
   color: white;
   padding: 5px;
   border-radius: 4px;
+  text-align: left; /* テキストを左寄せにする */
+  width: 10%; /* ボタンの幅を1/5に指定 */
 }
+
 
 /* 価格と送料のスタイル */
 .item-price-box {
@@ -659,11 +673,12 @@ nav .right-button a.button {
 /* 商品説明のスタイル */
 .item-explain-box {
   margin-bottom: 10px;
+  padding: 30px 40px;
 }
 
 /* 商品詳細テーブルのスタイル */
 .detail-table {
-  width: 100%;
+  width: 50%;
   margin-bottom: 10px;
   border-collapse: collapse;
 }
@@ -698,6 +713,7 @@ nav .right-button a.button {
 /* コメントボックスのスタイル */
 .comment-box {
   margin-bottom: 10px;
+  padding: 40px 40px;
 }
 
 .comment-text {
@@ -724,6 +740,7 @@ nav .right-button a.button {
 /* ページ内リンクのスタイル */
 .links {
   margin-bottom: 10px;
+  padding: 10px 40px;
 }
 
 .change-item-btn {
