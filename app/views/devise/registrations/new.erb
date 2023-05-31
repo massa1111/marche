@@ -18,7 +18,8 @@
 
  
    <%# <%= render 'shared/error_messages', model: f.object %> 
-  
+  <%= f.label :profile_image, "ご本人様画像" %>
+<%= f.file_field :profile_image %>
 
   <div class="form-group">
     <div class='form-text-wrap'>
