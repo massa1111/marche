@@ -1,0 +1,130 @@
+<header>
+  <nav>
+    <ul>
+      <%= link_to "オンラインマルシェ", root_path, class: "nav-link" %></li>
+    <% if user_signed_in? %>
+      <li>ようこそ<%= link_to current_user.name, "#", class: "nav-link" %>さま</li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "action-button" %></li>
+     <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "action-button" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "action-button" %></li>
+     <% end %>
+     <li><%= link_to '商品出品', new_item_path, class: "action-button" %></li>
+    </ul>              
+  </nav>
+</header>
+
+
+
+
+<%# 商品の概要 %>
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @item.item_name %>
+    </h2>
+    <div class="item-img-content">
+      <%= image_tag @item.image ,class: "item-box-img2" %>
+      <% if Order.exists?(item_id: @item.id) %> 
+       <div class="sold-out">
+        <span>Sold Out!!</span>
+      </div>
+       <% end %> 
+    </div>
+    <div class="item-price-box">
+      <span class="item-price">
+      ￥ <%= @item.price %>
+      </span>
+      <span class="item-postage">
+        <%= ShippingFeeStatus.find_by(id: @item.shipping_fee_status_id).shipping_fee_status %>
+      </span>
+    </div>
+
+    
+  <% if user_signed_in? %>
+     <% if user_signed_in? && current_user.id == @item.user_id %> 
+   <%# <% if user_signed_in? && current_user.id == @item.user_id && !Order.exists?(item_id: @item.id) %>  
+    <%= link_to "商品の編集", edit_item_path, method: :get, class: "item-red-btn" %>
+    <p class="or-text"></p>
+    <%= link_to "削除", item_path, method: :delete, class:"item-destroy" %>
+    
+    <% else %>
+       <% if Order.exists?(item_id: @item.id) %>  
+            <%#  購入画面リンク非表示  %>
+        <% else %> 
+      <%= link_to "購入画面に進む", item_orders_path(item_id: @item.id) ,class:"item-red-btn"%>
+        <% end %> 
+   <% end %> 
+ <% end %> 
+    <div class="item-explain-box">
+      <span>説明:<%= @item.info %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">出品者</th>
+          <td class="detail-value"><%= @item.user.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">カテゴリー</th>
+          <td class="detail-value"><%= Category.find_by(id: @item.category_id).category %></td>
+          
+        </tr>
+        <tr>
+          <th class="detail-item">商品の状態</th>
+          <td class="detail-value"><%= SalesStatus.find_by(id: @item.sales_status_id)&.sales_status %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">配送料の負担</th>
+          <td class="detail-value"><%= ShippingFeeStatus.find_by(id: @item.shipping_fee_status_id)&.shipping_fee_status %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">発送元の地域</th>
+          <td class="detail-value2"><%= Prefecture.find_by(id: @item.prefecture_id)&.prefecture %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">発送日の目安</th>
+          <td class="detail-value"><%= ScheduledDelivery.find_by(id: @item.scheduled_delivery_id)&.scheduled_delivery %></td>
+        </tr>
+      </tbody>
+    </table>
+    <%# <div class="option">
+      <div class="favorite-btn"> %>
+     
+        <%# <span>お気に入り 0</span> %>
+      <%# </div>
+      <div class="report-btn">
+        %>
+        <%# <span>不適切な商品の通報</span> %>
+      </div>
+    </div>
+  </div>
+  <%# /商品の概要 %>
+
+  <div class="comment-box">
+   <p class="comment-warn">
+       コメント機能  ※ 相手のことを考え丁寧なコメントを心がけましょう。
+      </p>
+    <form>
+      <textarea class="comment-text"></textarea>
+     
+      <button type="submit" class="comment-btn">
+ 
+        <span>コメントする</span>
+      </button>
+    </form>
+  </div>
+  <div class="links">
+    <a href="#" class="change-item-btn">
+      ＜ 前の商品
+    </a>
+    <a href="#" class="change-item-btn">
+      後ろの商品 ＞
+    </a>
+  </div>
+  
+  <%# <a href="#" class="another-item"><%= Category.find_by(id: @item.category_id).category %>をもっと見る</a> 
+  
+</div>
+
+

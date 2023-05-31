@@ -359,19 +359,22 @@ nav .right-button a.button {
 }
 
 /* スタイル */
-.list {
+.item-list {
+  padding: 50px 50px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 20px;
-  margin-left: 15%;
-  max-width: 70%; /* 左右の余白を設定 */
-  max-height: 70%; /* 左右の余白を設定 */
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.item {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
 }
 
 .item-img {
-  width: 33vw;
-  height: 100%;
+  width: 70vw;
+  height: auto;
 }
 
 .item-title {
@@ -394,6 +397,25 @@ nav .right-button a.button {
   margin-top: 10px;
 }
 
+.item-info {
+  font-size: 16px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.item-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f00;
+  margin-top: 10px;
+}
+
+.detail-value1 {
+  font-size: 16px;
+  color: #333;
+  margin-top: 5px;
+}
+
 .item-details {
   margin-top: 10px;
 }
@@ -403,7 +425,7 @@ nav .right-button a.button {
   color: #888;
 }
 
-.detail-value {
+.detail-value1 {
   font-size: 16px;
   color: #333;
   margin-top: 5px;
@@ -548,6 +570,326 @@ nav .right-button a.button {
   color: #666;
   text-align: center;
   margin-top: 20px;
+}
+
+
+/* 商品詳細ページ全体のスタイル */
+.item-show {
+  margin-bottom: 20px;
+}
+
+/* 商品ボックスのスタイル */
+.item-box {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 商品名のスタイル */
+.name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* 商品画像のスタイル */
+.item-img-content {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.item-box-img2 {
+  width: 50vw;
+  height: auto;
+}
+
+/* 売り切れメッセージのスタイル */
+.sold-out {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+/* 価格と送料のスタイル */
+.item-price-box {
+  margin-bottom: 10px;
+}
+
+.item-price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.item-postage {
+  font-size: 16px;
+  color: #666;
+}
+
+/* 編集・削除リンクのスタイル */
+.item-red-btn {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 8px 16px;
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.or-text {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+.item-destroy {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #ccc;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* 商品説明のスタイル */
+.item-explain-box {
+  margin-bottom: 10px;
+}
+
+/* 商品詳細テーブルのスタイル */
+.detail-table {
+  width: 100%;
+  margin-bottom: 10px;
+  border-collapse: collapse;
+}
+
+.detail-item,
+.detail-value {
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.detail-item {
+  font-weight: bold;
+  background-color: #f2f2f2;
+}
+
+/* オプションボタンのスタイル */
+.option {
+  margin-bottom: 10px;
+}
+
+.favorite-btn,
+.report-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #ccc;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+/* コメントボックスのスタイル */
+.comment-box {
+  margin-bottom: 10px;
+}
+
+.comment-text {
+  width: 100%;
+  height: 100px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.comment-warn {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.comment-btn {
+  padding: 8px 16px;
+  background-color: #f92c0d;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* ページ内リンクのスタイル */
+.links {
+  margin-bottom: 10px;
+}
+
+.change-item-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #ccc;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.another-item {
+  font-size: 14px;
+  color: #666;
+}
+
+/* */
+
+.transaction-contents {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.transaction-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-title-text {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.buy-item-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.buy-item-img {
+  width: 150px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.buy-item-right-content {
+  flex-grow: 1;
+}
+
+.buy-item-text {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.buy-item-price {
+  display: flex;
+  align-items: center;
+}
+
+.item-price-text {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.item-price-sub-text {
+  font-size: 14px;
+}
+
+.item-payment {
+  margin-bottom: 20px;
+}
+
+.item-payment-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.item-payment-price {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.transaction-form-wrap {
+  margin-top: 20px;
+}
+
+.credit-card-form,
+.shipping-address-form {
+  margin-bottom: 20px;
+}
+
+.info-input-haedline {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-text-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.form-text {
+  margin-right: 5px;
+}
+
+.indispensable {
+  color: red;
+  font-size: 14px;
+}
+
+.input-default {
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.available-card {
+  display: flex;
+  margin-top: 10px;
+}
+
+.card-logo {
+  width: 40px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.input-expiration-date-wrap {
+  display: flex;
+}
+
+.select-box {
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.buy-btn {
+  margin-top: 20px;
+}
+
+.buy-red-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #fff;
+  background-color: red;
+  border: none;
+  border-radius: 4px;
+}
+
+.buy-red-btn {
+  margin-top: 20px;
+  text-align: center;
+}
+.buy-red-btn:hover {
+  background-color: darkred;
 }
 
 
