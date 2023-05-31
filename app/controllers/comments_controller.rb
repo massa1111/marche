@@ -2,8 +2,20 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to item_path(params[:item_id])
+      redirect_to item_path(params[:item_id])+ "#comments"
     end
+  end
+
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    if current_user == @comment.user
+      @comment.destroy
+      flash[:notice] = "コメントが削除されました。"
+    else
+      flash[:alert] = "コメントの削除に失敗しました。"
+    end
+    redirect_to item_path(@comment.item)
   end
 
   private

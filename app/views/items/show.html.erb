@@ -106,13 +106,18 @@
   </div>
   <%# /商品の概要 %>
 <div id="comments">
-  <h4>＜コメント一覧＞</h4>
-    <% @item.comments.each do |comment| %>
-      <div class="comment">
-        <p class="user-info"><%= comment.user.name %>： </p>
-        <p><%= comment.text%></p>
-      </div>
-    <% end %>
+  <h4 class="comment-list-heading">コメント一覧</h4>
+  <% @item.comments.each do |comment| %>
+    <div class="comment">
+      <p class="user-info"><%= comment.user.name %>：</p>
+      <p><%= comment.text %></p>
+      <p class="post-time">投稿時間：<%= comment.created_at.in_time_zone("Tokyo").strftime("%Y-%m-%d %H:%M:%S") %></p>
+      <% if current_user == comment.user %>
+      <%= link_to "削除", item_comment_path(@item, comment), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "delete-comment-link" %>
+      <% end %>
+    </div>
+   
+  <% end %>
 </div>
   <div class="comment-box">
 
