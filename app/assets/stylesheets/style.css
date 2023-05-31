@@ -370,12 +370,18 @@ nav .right-button a.button {
   flex: 1 1 300px;
   display: flex;
   flex-direction: column;
+  align-items: center; /* 写真を中央に配置するために追加 */
+  text-align: center; /* 写真のキャプションを中央に配置するために追加 */
 }
 
 .item-img {
-  width: 70vw;
+  width: 100vw; /* 幅を100%に設定して親要素に合わせる */
   height: auto;
+  max-width: 500px; /* 最大幅を300pxに設定して大きくなりすぎないようにする */
+  max-height: 300px; /* 最大高さを300pxに設定して大きくなりすぎないようにする */
 }
+
+
 
 .item-title {
   font-size: 24px;
