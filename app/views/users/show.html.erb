@@ -2,6 +2,7 @@
 
 <p>ユーザー名: <%= @user.name %></p>
 <p>メールアドレス: <%= @user.email %></p>
-<p>メールアドレス: <%= @user.profile_image %></p>
+
  <%= image_tag @user.profile_image, class: "item-img" %>
 <%= link_to 'ユーザー情報を修正する', edit_user_registration_path %>
+ <%=link_to 'もどる', root_path, class:"back-btn" %>

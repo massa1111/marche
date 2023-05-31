@@ -61,6 +61,7 @@
         <% end %> 
    <% end %> 
  <% end %> 
+
     <div class="item-explain-box">
       <span>説明:<%= @item.info %></span>
     </div>
@@ -93,6 +94,8 @@
         </tr>
       </tbody>
     </table>
+    生産者写真：
+     <%= image_tag @user.profile_image, class: "item-img" %>
     <%# <div class="option">
       <div class="favorite-btn"> %>
      

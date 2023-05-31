@@ -4,13 +4,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
   before_action :configure_permitted_parameters, if: :devise_controller?
+ 
   def update
-    super do |resource|
-      redirect_to user_path(resource) # 遷移先のパスを指定してください
-      return
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      render :edit
     end
   end
   private
+
+  
+
+def user_params
+  params.require(:user).permit(:name, :email, :password, :profile_image)
+end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :profile_image, :encrypted_password])
