@@ -736,7 +736,36 @@ nav .right-button a.button {
   text-decoration: none;
   border-radius: 4px;
 }
+.comment-list-heading {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 1px 40px;
+} 
 
+
+.comment{
+  display: flex;
+  padding: 1px 40px;
+}
+
+.comment p{
+   margin: 1;
+}
+.comment .post-time {
+  font-size: 12px;
+  color: gray;
+  margin-top: 5px;
+}
+.delete-comment-link {
+  color: red;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.user-info{
+  color: gray;
+  font-weight: bold;
+}
 /* ページ内リンクのスタイル */
 .links {
   margin-bottom: 10px;
