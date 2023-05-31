@@ -23,7 +23,7 @@
           <%= image_tag item.image, class: "item-img" %>
           <p class="item-info">説明：<%= item.info %></p>
           <div class="item-details">
-            <div class="detail-value1">発送元の地域: <%= Prefecture.find_by(id: item.prefecture_id)&.prefecture %></div>
+            <div class="detail-value">生産地: <%= Prefecture.find_by(id: item.prefecture_id)&.prefecture %></div>
             <div class="detail-item">配送料の負担:</div>
             <div class="detail-value"><%= ShippingFeeStatus.find_by(id: item.shipping_fee_status_id)&.shipping_fee_status %></div>
           </div>
@@ -33,3 +33,7 @@
     </div>
   <% end %>
 </div>
+      <div class="sell-btn-contents">
+       <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+  
