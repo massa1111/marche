@@ -1,8 +1,25 @@
-<h1>ユーザー詳細ページ</h1>
+ <header>
+  <nav>
+    <ul>
+    <li class="left-button">
+  <%= link_to "オンラインマルシェ", root_path, class: "nav-link" %></li>  
+ <li>ようこそ<%= link_to current_user.name, user_path(current_user), class: "nav-link" %>さま</li>
+ <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "action-button" %></li>
+  <li><%= link_to '商品出品', new_item_path, class: "action-button" %></li>
+  <li><%= link_to '商品一覧', items_item_list_path, class: "action-button" %></li>  
+    </ul>              
+  </nav>
+</header>
+<h1 class="user-detail-title">ユーザー詳細ページ</h1>
 
-<p>ユーザー名: <%= @user.name %></p>
-<p>メールアドレス: <%= @user.email %></p>
+<p class="user-info2">ユーザー名: <%= @user.name %></p>
+<p class="user-info2">メールアドレス: <%= @user.email %></p>
 
- <%= image_tag @user.profile_image, class: "item-img" %>
-<%= link_to 'ユーザー情報を修正する', edit_user_registration_path %>
- <%=link_to 'もどる', root_path, class:"back-btn" %>
+<%= image_tag @user.profile_image, class: "item-img2 user-profile-image2" %>
+
+<div class="red-btn-wrapper">
+  <%= link_to 'ユーザー情報を修正する', edit_user_registration_path, class: "red-btn" %>
+<%=link_to 'もどる', root_path, class:"back-btn" %>
+</div>
+
+ 

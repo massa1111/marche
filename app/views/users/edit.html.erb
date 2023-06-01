@@ -18,9 +18,7 @@
 
  
    <%# <%= render 'shared/error_messages', model: f.object %> 
-  <%= f.label :profile_image, "ご本人様画像" %>
-   <span class="indispensable">必須</span>
-<%= f.file_field :profile_image %>
+  
 
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -108,11 +106,9 @@
   </div> %>
   <div class='register-btn'>
     <%= f.submit "会員登録" ,class:"register-red-btn" %>
-     <%=link_to 'もどる', root_path, class:"back-btn" %>
   </div>
-  
   <%# <p class='register-info'>本人情報の登録について</p> %>
 </div>
 <% end %>
- 
+
 <%# <%= render "shared/second-footer"%> 

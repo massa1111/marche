@@ -3,7 +3,7 @@
     <ul>
       <%= link_to "オンラインマルシェ", root_path, class: "nav-link" %></li>
     <% if user_signed_in? %>
-      <li>ようこそ<%= link_to current_user.name, "#", class: "nav-link" %>さま</li>
+      <li><%= link_to current_user.name, user_path(current_user), class: "nav-link" %>さま</li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "action-button" %></li>
      <% else %>
       <li><%= link_to 'ログイン', new_user_session_path, class: "action-button" %></li>
@@ -94,8 +94,9 @@
         </tr>
       </tbody>
     </table>
-    生産者写真：
+    
      <%= image_tag @user.profile_image, class: "item-img" %>
+     <p class="user-info">生産者：<%= @item.user.name %>
     <%# <div class="option">
       <div class="favorite-btn"> %>
      
@@ -112,16 +113,21 @@
   <h4 class="comment-list-heading">コメント一覧</h4>
   <% @item.comments.each do |comment| %>
     <div class="comment">
-      <p class="user-info"><%= comment.user.name %>：</p>
-      <p><%= comment.text %></p>
-      <p class="post-time">投稿時間：<%= comment.created_at.in_time_zone("Tokyo").strftime("%Y-%m-%d %H:%M:%S") %></p>
-      <% if current_user == comment.user %>
-      <%= link_to "削除", item_comment_path(@item, comment), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "delete-comment-link" %>
-      <% end %>
+      <div class="user-avatar">
+        <%= image_tag comment.user.profile_image.variant(resize: "100x100"), class: "avatar-image" if comment.user.profile_image.attached? %>
+      </div>
+      <div class="comment-content">
+        <p class="user-info"><%= comment.user.name %>：</p>
+        <p><%= comment.text %></p>
+        <p class="post-time">投稿時間：<%= comment.created_at.in_time_zone("Tokyo").strftime("%Y-%m-%d %H:%M:%S") %></p>
+        <% if current_user == comment.user %>
+          <%= link_to "削除", item_comment_path(@item, comment), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "delete-comment-link" %>
+        <% end %>
+      </div>
     </div>
-   
   <% end %>
 </div>
+
   <div class="comment-box">
 
    <p class="comment-warn">

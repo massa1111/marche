@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :redirect_non_current_user, except: [:show, :edit, :update]
 
   def show
     @user = User.find(params[:id])
@@ -12,7 +13,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-      redirect_to user_path(@user), notice: "ユーザー情報が更新されました。"
+      redirect_to user_path(@user)
     else
       render :edit
     end
@@ -21,7 +22,12 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :profile_image)  # 編集可能なパラメータを指定してください
+    params.require(:user).permit(:name, :email, :profile_image)
   end
 
+  def redirect_non_current_user
+    unless current_user == User.find(params[:id])
+      redirect_to root_path
+    end
+  end
 end
