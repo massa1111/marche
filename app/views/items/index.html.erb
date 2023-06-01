@@ -10,7 +10,7 @@
     <li class="left-button">
   <%= link_to "オンラインマルシェ", root_path, class: "nav-link" %></li>
     <% if user_signed_in? %>
-      <li>ようこそ<%= link_to current_user.name, "#", class: "nav-link" %>さま<li>
+      <li>ようこそ<%= link_to current_user.name, user_path(current_user), class: "nav-link" %>さま</li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "action-button" %></li>
      <% else %>
       <li><%= link_to 'ログイン', new_user_session_path, class: "action-button" %></li>
@@ -63,6 +63,6 @@
 
   </main>
   <footer>
-    <p>© 2023 オンラインマルシェ</p>
+    <p>2023 オンラインマルシェ</p>
   </footer>
 </body>

@@ -8,7 +8,9 @@
 </header>
 
 <%= image_tag "top.jpg", class: "hero-image2" %>
-<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true, method: :put do |f| %>
+
+
 <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
@@ -18,14 +20,15 @@
 
  
    <%# <%= render 'shared/error_messages', model: f.object %> 
-  <%= f.label :profile_image, "ご本人様画像" %>
-   <span class="indispensable">必須</span>
-<%= f.file_field :profile_image %>
+  
 
   <div class="form-group">
+  <%= f.label :profile_image, "ご本人様画像" %>
+<%= f.file_field :profile_image %>
     <div class='form-text-wrap'>
       <label class="form-text">お名前</label>
       <span class="indispensable">必須</span>
+      
     </div>
     <%= f.text_area :name, class:"input-default", id:"user_name", placeholder:"例) 山田陸太", maxlength:"40" %>
   </div>
@@ -107,12 +110,13 @@
     </h2>
   </div> %>
   <div class='register-btn'>
-    <%= f.submit "会員登録" ,class:"register-red-btn" %>
+    <%= f.submit "会員情報を修正する" ,class:"register-red-btn" %>
      <%=link_to 'もどる', root_path, class:"back-btn" %>
   </div>
-  
   <%# <p class='register-info'>本人情報の登録について</p> %>
 </div>
 <% end %>
+
  
+
 <%# <%= render "shared/second-footer"%> 

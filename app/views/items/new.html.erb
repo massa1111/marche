@@ -3,12 +3,13 @@
     <ul>
      <%= link_to "オンラインマルシェ", root_path, class: "nav-link" %></li>
     <% if user_signed_in? %>
-      <li>ようこそ<%= link_to current_user.name, "#", class: "nav-link" %>さま<li>
+     <li><%= link_to current_user.name, user_path(current_user), class: "nav-link" %>さま</li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "action-button" %></li>
      <% else %>
       <li><%= link_to 'ログイン', new_user_session_path, class: "action-button" %></li>
       <li><%= link_to '新規登録', new_user_registration_path, class: "action-button" %></li>
      <% end %>
+      <li><%= link_to '商品一覧', items_item_list_path, class: "action-button" %></li>  
     
     </ul>              
   </nav>
@@ -54,7 +55,7 @@
           商品の説明
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :info, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、、重さ、定価、注意点など）" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :info, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（詳細、重さ、個数、注意点など）" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
     <%# /商品名と商品説明 %>
@@ -116,7 +117,7 @@
             <span class="indispensable">必須</span>
           </div>
           <span class="sell-yen">¥</span>
-          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）300" %>
+          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）500" %>
         </div>
        
       </div>
@@ -155,3 +156,8 @@
     <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
     
 </div> 
+ </main>
+  <footer>
+    <p>2023 オンラインマルシェ</p>
+  </footer>
+</body>
