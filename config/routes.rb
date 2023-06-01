@@ -6,8 +6,13 @@ Rails.application.routes.draw do
   get 'users/:id', to: 'users#show', as: 'user'
   
   
+  
   root to: "items#index"
   resources :items do
+    member do
+      get 'next'
+      get 'previous'
+    end
     resources :comments, only: [:create, :destroy]
     resources :orders, only: [:create, :index]
   end

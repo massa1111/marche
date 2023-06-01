@@ -149,17 +149,18 @@
     </form>
   </div>
   <div class="links">
-    <a href="#" class="change-item-btn">
-      ＜ 前の商品
-    </a>
-    <a href="#" class="change-item-btn">
-      後ろの商品 ＞
-    </a>
+    <%= link_to "＜ 前の商品", previous_item_path(@item), class: "change-item-btn" %>
+
+    <%= link_to "後ろの商品 ＞", next_item_path(@item), class: "change-item-btn" %>
+
     <%=link_to 'もどる', root_path, class:"back-btn" %>
   </div>
   
   
-  <%# <a href="#" class="another-item"><%= Category.find_by(id: @item.category_id).category %>をもっと見る</a> 
+  <%# <a href="#" class="another-item">
+  <%= Category.find_by(id: @item.category_id).category %>
+  <%# をもっと見る %> 
+  
   
 </div>
 
