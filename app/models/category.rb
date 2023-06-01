@@ -1,16 +1,12 @@
 class Category < ActiveHash::Base
   self.data = [
     { id: 1, category: '---' },
-    { id: 2, category: 'メンズ' },
-    { id: 3, category: 'レディース' },
-    { id: 4, category: 'ベビー・キッズ' },
-    { id: 5, category: 'インテリア・住まい・小物' },
-    { id: 6, category: '本・音楽・ゲーム' },
-    { id: 7, category: 'おもちゃ・ホビー・グッズ' },
-    { id: 8, category: '家電・スマホ・カメラ' },
-    { id: 9, category: 'スポーツ・レジャー' },
-    { id: 10, category: 'ハンドメイド' },
-    { id: 11, category: 'その他' }
+    { id: 2, category: '野菜' },
+    { id: 3, category: '果実' },
+    { id: 4, category: '米、穀類' },
+    { id: 5, category: 'お茶' },
+    { id: 6, category: '花' },
+    { id: 7, category: 'その他' },
   ]
   include ActiveHash::Associations
   belongs_to :item
