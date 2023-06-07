@@ -52,10 +52,14 @@ Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
  
 
 # ローカルでの動作方法	  
-% git clone https://github.com/massa1111/marche.git
-% cd marche
-% bundle install
+% git clone https://github.com/massa1111/marche.git  
+
+% cd marche  
+
+% bundle install  
+
 % yarn install  
+  
 
 # 工夫したポイント  
 chatGTPを利用し4日間でオリジナルアプリを作成しました。1日あたりの平均作業時間：10時間、合計：50時間程度
