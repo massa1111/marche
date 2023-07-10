@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:update, :edit, :show, :destroy, :next, :previous]
-  before_action :authenticate_user!, except: [:item_list,:index, :show, :next, :previous]
+  before_action :authenticate_user!, except: [:item_list, :index, :show, :next, :previous]
   before_action :contributor_confirmation, only: [:edit, :update, :destroy]
   def item_list
     @items = Item.includes(:user).order('created_at DESC')
@@ -46,19 +46,21 @@ class ItemsController < ApplicationController
   def previous
     @previous_item = Item.where('id < ?', @item.id).last
     if @previous_item.nil?
-      redirect_to root_path, notice: "前の商品はありません。"
+      redirect_to root_path, notice: '前の商品はありません。'
     else
       redirect_to item_path(@previous_item)
     end
   end
+
   def next
     @next_item = Item.where('id > ?', @item.id).first
     if @next_item.nil?
-      redirect_to root_path, notice: "次の商品はありません。"
+      redirect_to root_path, notice: '次の商品はありません。'
     else
       redirect_to item_path(@next_item)
     end
   end
+
   private
 
   def item_params

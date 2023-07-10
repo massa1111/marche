@@ -6,7 +6,7 @@ class Category < ActiveHash::Base
     { id: 4, category: '米、穀類' },
     { id: 5, category: 'お茶' },
     { id: 6, category: '花' },
-    { id: 7, category: 'その他' },
+    { id: 7, category: 'その他' }
   ]
   include ActiveHash::Associations
   belongs_to :item
