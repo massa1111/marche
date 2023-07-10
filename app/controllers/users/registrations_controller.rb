@@ -4,7 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
   before_action :configure_permitted_parameters, if: :devise_controller?
- 
+
   def update
     if @user.update(user_params)
       redirect_to user_path(@user)
@@ -12,19 +12,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :edit
     end
   end
+
   private
 
-  
-
-def user_params
-  params.require(:user).permit(:name, :email, :password, :profile_image)
-end
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :profile_image)
+  end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :profile_image, :encrypted_password])
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :profile_image, :encrypted_password])
   end
-  
+
   # GET /resource/sign_up
   # def new
   #   super

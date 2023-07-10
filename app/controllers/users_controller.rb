@@ -26,8 +26,8 @@ class UsersController < ApplicationController
   end
 
   def redirect_non_current_user
-    unless current_user == User.find(params[:id])
-      redirect_to root_path
-    end
+    return if current_user == User.find(params[:id])
+
+    redirect_to root_path
   end
 end

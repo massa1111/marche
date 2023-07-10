@@ -29,10 +29,10 @@ class OrdersController < ApplicationController
   end
 
   def check_item_availability
-  if order_exists? || current_user == @item.user
+    return unless order_exists? || current_user == @item.user
+
     redirect_to root_path
   end
-end
 
   def order_params
     params.require(:order_shipment).permit(:postal_code, :city, :addresses, :prefecture_id, :building, :phone_number).merge(
